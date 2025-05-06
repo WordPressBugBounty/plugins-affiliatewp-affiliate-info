@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: AffiliateWP - Affiliate Info
- * Plugin URI: https://affiliatewp.com/add-ons/official-free/affiliate-info/
+ * Plugin URI: https://affiliatewp.com/addons/affiliate-info/
  * Description: Show information based on the affiliate's referral URL
- * Author: Sandhills Development, LLC
- * Author URI: https://sandhillsdev.com
- * Version: 1.2
+ * Author: AffiliateWP
+ * Author URI: https://affiliatewp.com
+ * Version: 1.2.0
  * Text Domain: affiliatewp-affiliate-info
  *
  * AffiliateWP is distributed under the terms of the GNU General Public License as published by

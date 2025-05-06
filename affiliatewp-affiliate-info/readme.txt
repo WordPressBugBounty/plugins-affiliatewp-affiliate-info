@@ -1,14 +1,14 @@
 === AffiliateWP - Affiliate Info ===
-Contributors: sumobi, mordauk
-Tags: AffiliateWP, affiliate, affiliates, Pippin Williamson, Andrew Munro, mordauk, pippinsplugins, sumobi, ecommerce, e-commerce, e commerce, selling, membership, referrals, marketing
+Contributors: sumobi, aubreypwd
+Tags: affiliatewp, referral tracking, affiliate info, show referrer, affiliate details
 Requires at least: 5.2
-Tested up to: 6.0
-Requires PHP: 5.6
-Stable tag: 1.2
+Tested up to: 6.8
+Requires PHP: 7.4
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Display information based on the affiliate's referral URL
+Display information based on the affiliate's referral URL.
 
 == Description ==
 
@@ -102,10 +102,10 @@ OR you can just install it with WordPress by going to Plugins >> Add New >> and 
 
 == Changelog ==
 
-= 1.2 =
+= 1.2.0 =
 * New: Requires WordPress 5.2 minimum
 
-= 1.1 =
+= 1.1.0 =
 * New: Enforce minimum dependency requirements checking
 * New: Requires PHP 5.6 minimum
 * New: Requires WordPress 5.0 minimum
@@ -132,5 +132,5 @@ OR you can just install it with WordPress by going to Plugins >> Add New >> and 
 * New: [affiliate_info_referred] shortcode to show content only when an affiliate is being tracked
 * New: [affiliate_info_not_referred] shortcode to show content only when an affiliate is not being tracked. Useful for providing a fallback.
 
-= 1.0 =
+= 1.0.0 =
 * Initial release
