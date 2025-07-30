@@ -192,22 +192,14 @@ if ( ! class_exists( 'AffiliateWP_Affiliate_Info' ) ) {
 		 *
 		 * @access      public
 		 * @since       1.0.0
+		 * @since       1.2.0 Get more addons removed.
 		 * @param       array $links The current links array
 		 * @param       string $file A specific plugin table entry
 		 * @return      array $links The modified links array
 		 */
 		public function plugin_meta( $links, $file ) {
-		    if ( $file == plugin_basename( $this->file ) ) {
-		        $plugins_link = array(
-		            '<a title="' . __( 'Get more add-ons for AffiliateWP', 'affiliatewp-affiliate-info' ) . '" href="https://affiliatewp.com/addons/" target="_blank">' . __( 'More add-ons', 'affiliatewp-affiliate-info' ) . '</a>'
-		        );
-
-		        $links = array_merge( $links, $plugins_link );
-		    }
-
-		    return $links;
+			return $links;
 		}
-
 	}
 
 	/**

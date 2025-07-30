@@ -162,7 +162,7 @@ class AffiliateWP_AI_Requirements_Check extends AffiliateWP_Requirements_Check_v
 	 * @return string Unmet requirements URL.
 	 */
 	protected function unmet_requirements_url() {
-		return 'https://docs.affiliatewp.com/article/2361-minimum-requirements-roadmaps';
+		return 'https://affiliatewp.com/docs/minimum-requirements-roadmap/';
 	}
 
 }
