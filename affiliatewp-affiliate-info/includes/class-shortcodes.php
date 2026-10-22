@@ -1,5 +1,10 @@
 <?php
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class AffiliateWP_Affiliate_Info_Shortcodes {
 
 	public function __construct() {
@@ -59,7 +64,7 @@ class AffiliateWP_Affiliate_Info_Shortcodes {
 
     	$content = affiliatewp_affiliate_info()->functions->get_affiliate_bio();
 
-    	return do_shortcode( $content );
+    	return wp_kses_post( $content );
     }
 
 	/**
@@ -71,7 +76,7 @@ class AffiliateWP_Affiliate_Info_Shortcodes {
 
     	$content = affiliatewp_affiliate_info()->functions->get_affiliate_name();
 
-    	return do_shortcode( $content );
+    	return esc_html( $content );
     }
 
 	/**
@@ -83,7 +88,7 @@ class AffiliateWP_Affiliate_Info_Shortcodes {
 
     	$content = affiliatewp_affiliate_info()->functions->get_twitter_username();
 
-    	return do_shortcode( $content );
+    	return esc_html( $content );
     }
 
 	/**
@@ -95,7 +100,7 @@ class AffiliateWP_Affiliate_Info_Shortcodes {
 
     	$content = affiliatewp_affiliate_info()->functions->get_facebook_url();
 
-    	return do_shortcode( $content );
+    	return esc_html( $content );
     }
 
 	/**
@@ -107,7 +112,7 @@ class AffiliateWP_Affiliate_Info_Shortcodes {
 
     	$content = affiliatewp_affiliate_info()->functions->get_googleplus_url();
 
-    	return do_shortcode( $content );
+    	return esc_html( $content );
     }
 
 	/**
@@ -119,7 +124,7 @@ class AffiliateWP_Affiliate_Info_Shortcodes {
 
 		$content = affiliatewp_affiliate_info()->functions->get_affiliate_username();
 
-		return do_shortcode( $content );
+		return esc_html( $content );
 	}
 
 	/**
@@ -131,7 +136,7 @@ class AffiliateWP_Affiliate_Info_Shortcodes {
 
 		$content = affiliatewp_affiliate_info()->functions->get_affiliate_email();
 
-		return do_shortcode( $content );
+		return esc_html( $content );
 	}
 
 	/**
@@ -143,7 +148,7 @@ class AffiliateWP_Affiliate_Info_Shortcodes {
 
     	$content = affiliatewp_affiliate_info()->functions->get_affiliate_website();
 
-    	return do_shortcode( $content );
+    	return esc_html( $content );
     }
 
 	/**
@@ -157,7 +162,11 @@ class AffiliateWP_Affiliate_Info_Shortcodes {
 
         $content = affiliatewp_affiliate_info()->functions->get_affiliate_gravatar( $atts );
 
-    	return do_shortcode( $content );
+		// Keep srcset so HiDPI screens still get the 2x avatar.
+		$allowed                  = wp_kses_allowed_html( 'post' );
+		$allowed['img']['srcset'] = true;
+
+		return wp_kses( $content, $allowed );
     }
 
 }

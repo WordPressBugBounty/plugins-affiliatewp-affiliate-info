@@ -48,7 +48,7 @@ if ( ! class_exists( 'AffiliateWP_Affiliate_Info' ) ) {
 		 *
 		 * @since 1.0
 		 */
-		private $version = '1.2';
+		private $version = '';
 
 		/**
 		 * Functions
@@ -73,7 +73,8 @@ if ( ! class_exists( 'AffiliateWP_Affiliate_Info' ) ) {
 			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof AffiliateWP_Affiliate_Info ) ) {
 
 				self::$instance = new AffiliateWP_Affiliate_Info;
-				self::$instance->file = $file;
+				self::$instance->file    = $file;
+				self::$instance->version = get_plugin_data( self::$instance->file, false, false )['Version'] ?? '';
 
 				self::$instance->setup_constants();
 				self::$instance->includes();
@@ -98,7 +99,7 @@ if ( ! class_exists( 'AffiliateWP_Affiliate_Info' ) ) {
 		 */
 		public function __clone() {
 			// Cloning instances of the class is forbidden
-			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'affiliatewp-affiliate-info' ), '1.0' );
+			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin’ huh?', 'affiliatewp-affiliate-info' ), '1.0' );
 		}
 
 		/**
@@ -110,7 +111,7 @@ if ( ! class_exists( 'AffiliateWP_Affiliate_Info' ) ) {
 		 */
 		public function __wakeup() {
 			// Unserializing instances of the class is forbidden
-			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'affiliatewp-affiliate-info' ), '1.0' );
+			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin’ huh?', 'affiliatewp-affiliate-info' ), '1.0' );
 		}
 
 		/**
